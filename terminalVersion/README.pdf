@@ -1,0 +1,54 @@
+Gra Pokemon:
+
+Cel i opis Projektu:
+
+Stworzyć grę w której można grać między dwoma graczami albo gracz z komputerem, w której można wybrać liczbę pokemonów
+do walki. Gra polega na walce zespołów pokemonów dwóch graczy, każdy gracz do walki w jednym momencie może mieć jednego
+pokemona. Gra trwa do momentu śmierci wszystkich pokemonów jednego gracza.
+
+
+Podział programu na klasy:
+
+1. GameInterface - klasa interfejsu gry w której wykonuje się cała rozgrywka i wyświetla komunikaty
+użytkownikowi na temat tego co się dzieje w trakcie gry i jakie wartości powinien podawać
+2. Game - klasa gry które ustawia zasady i statystyki całej rozgrywki
+3. Player - klasa gracza (człowieka), zawiera listę pokemonów gracza i w niej znajduje się wybór konkretnego
+ruchu pokemona i wybór pokemonów do drużyny gracza, zawiera możliwość zmiany pokemona w trakcie walki
+4. ComputerPlayer - klasa gracza komputera, który dziedziczy po klasie Player, komputer wybiera najlepsze ruchy
+i najlepszego pokemona do walki z obecnym pokemonem przeciwnika według potencjału obliczanego w jednej z jej funkcji
+5. Pokemon - klasa pokemona, która przyjmuje wszystkie statystyki pokemona w konstruktorze, posiada możliwość
+obrony, zwykłego ataku oraz specjalnego ataku. Zawiera funkcję obliczającą podatność przeciwnika na podany typ ataku.
+6. Database - klasa bazy danych odczytująca plik zawierający statystyki pokemonów i zwracająca prawidłową listę pokemonów.
+
+
+Instrukcja użytkownika:
+Pliki konfiguracyjne:
+-pokemon.csv - plik zawiera w każdej linijce poza pierwszą statystyki różnych pokemonów oddzielone od siebie przecinkiem,
+w 1 linijce zawiera nazwy kolejnych statystyk pokemonów
+
+Grę aktywuję sie poprzez odpalenie pliku interface
+1. Użytkownik wybiera tryb gry z 2 możliwych: Gracz kontra Gracz lub Gracz kontra Komputer
+2. Użytkownik wybiera liczbę pokemonów od 1 do 6, które każdy z graczy będzie posiadał na początku walki
+3. Każdy z graczy wybiera z listy wszystkich pokemonów tyle pokemonów ile użytkownik ustalił w poprzednim punkcie
+4. Każdy gracz wybiera z swoich pokemonów 1 pokemona do walki na początku
+5. Rozgrywka:
+Gracz 1 i 2 naprzemian wybierają 1 ruch z 4 możliwych (jeśli wybrano tryb Gracz kontra Komputer zamiast gracza 2
+natychmiastowo wybiera ruchy komputer):
+-defense - zwiększa obronę o 10%
+-attack - atakuje przeciwnika atakiem normalnym
+-special_attack - atak wykorzystujący "typ" pokemona
+-go back - gracz zamienia pokemona walczacego na pokemona z swoich pozostałych pokemonów
+Jeśli pokemon gracza zginie wybiera on nowego do walki jeśli posiada jeszcze inne.
+Rozgrywka trwa aż wszystkie pokemony jednego z graczy nie zginą.
+Gracz, którego wszystkie pokemony nie zginęły zwycięża.
+6. Użytkownik jest zapytany czy chce rozpocząć grę od nowa
+
+
+Refleksja:
+
+Udało się osiągnać wszystkie założenia projektu.
+Udało się uniknąć powtórzeń kodu związanych z wczytywaniem wartości od użytkownika.
+W projekcie zabezpieczone zostały wszystkie możliwe błędy, które użytkownik mógłby popełnić podczas
+wybierania ruchów albo pokemonów.
+
+
